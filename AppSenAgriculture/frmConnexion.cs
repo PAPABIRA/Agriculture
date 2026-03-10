@@ -43,28 +43,32 @@ namespace AppSenAgriculture
                     return;
                 }
 
-                // Vérification des identifiants fixes
-                if (txtIdentifiant.Text.Trim() != "admin" || txtMotDePasse.Text.Trim() != "1234")
-                {
-                    MessageBox.Show("Identifiants incorrects !\n\nUtilisez :\nIdentifiant: admin\nMot de passe: 1234", 
-                        "Erreur d'authentification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtIdentifiant.Focus();
-                    return;
-                }
-
-                // Test de connexion à la base de données
+                // Vérification des identifiants via la base de données
                 try
                 {
                     using (var db = new Models.BdSenAgricultureContext())
                     {
-                        db.Database.Connection.Open();
-                        db.Database.Connection.Close();
-                        MessageBox.Show("Connexion à la base de données réussie !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string login = txtIdentifiant.Text.Trim();
+                        string password = txtMotDePasse.Text.Trim();
+
+                        // Recherche de l'administrateur
+                        var admin = db.Admins.FirstOrDefault(a => a.Login == login && a.EstActif);
+
+                        if (admin == null || admin.MotDePasse != password)
+                        {
+                            MessageBox.Show("Identifiant ou mot de passe incorrect !", 
+                                "Erreur d'authentification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtIdentifiant.Focus();
+                            return;
+                        }
+
+                        // Connexion réussie
+                        MessageBox.Show($"Bienvenue, {admin.NomPrenom} !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception dbEx)
                 {
-                    MessageBox.Show($"ERREUR DE CONNEXION À LA BASE DE DONNÉES:\n\n{dbEx.Message}\n\nVérifiez que:\n- MySQL est installé et démarré\n- La base 'bdsenagriculture' existe\n- Identifiants: root/P@sser123\n\nUtilisez le script 'creer_base_complete.sql' dans MySQL Workbench", 
+                    MessageBox.Show($"ERREUR DE CONNEXION À LA BASE DE DONNÉES:\n\n{dbEx.Message}\n\nVérifiez que MySQL est démarré et que la base 'bdsenagriculture' est configurée.", 
                         "Erreur Base de Données", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
@@ -96,6 +100,19 @@ namespace AppSenAgriculture
             catch (Exception ex)
             {
                 MessageBox.Show($"Erreur lors de la fermeture:\n\n{ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void lnkInscription_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                Views.Securite.frmInscription f = new Views.Securite.frmInscription();
+                f.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erreur lors de l'ouverture de l'inscription:\n\n{ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
