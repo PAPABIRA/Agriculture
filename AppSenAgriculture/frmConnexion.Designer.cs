@@ -36,7 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.bnSeConnecter = new System.Windows.Forms.Button();
-            this.lnkInscription = new System.Windows.Forms.LinkLabel();
             this.panelLogin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +50,6 @@
             this.panelLogin.Controls.Add(this.label2);
             this.panelLogin.Controls.Add(this.btnQuitter);
             this.panelLogin.Controls.Add(this.bnSeConnecter);
-            this.panelLogin.Controls.Add(this.lnkInscription);
             this.panelLogin.Location = new System.Drawing.Point(50, 33);
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(531, 381);
@@ -133,18 +131,6 @@
             this.bnSeConnecter.UseVisualStyleBackColor = false;
             this.bnSeConnecter.Click += new System.EventHandler(this.bnSeConnecter_Click);
             // 
-            // lnkInscription
-            // 
-            this.lnkInscription.AutoSize = true;
-            this.lnkInscription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkInscription.Location = new System.Drawing.Point(120, 260);
-            this.lnkInscription.Name = "lnkInscription";
-            this.lnkInscription.Size = new System.Drawing.Size(180, 18);
-            this.lnkInscription.TabIndex = 7;
-            this.lnkInscription.TabStop = true;
-            this.lnkInscription.Text = "Pas encore de compte ? S\'inscrire";
-            this.lnkInscription.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkInscription_LinkClicked);
-            // 
             // frmConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -174,6 +160,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.Button bnSeConnecter;
-        private System.Windows.Forms.LinkLabel lnkInscription;
     }
 }
+

@@ -146,41 +146,11 @@
     <Compile Include="Views\Parametre\frmProduit.Designer.cs">
       <DependentUpon>frmProduit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Parametre\frmUniteMesure.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Parametre\frmUniteMesure.Designer.cs">
-      <DependentUpon>frmUniteMesure.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmStock.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmStock.Designer.cs">
-      <DependentUpon>frmStock.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmCommande.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmCommande.Designer.cs">
-      <DependentUpon>frmCommande.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\frmFacture.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmFacture.Designer.cs">
-      <DependentUpon>frmFacture.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Parametre\frmLieu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Parametre\frmLieu.Designer.cs">
       <DependentUpon>frmLieu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Securite\frmInscription.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Securite\frmInscription.Designer.cs">
-      <DependentUpon>frmInscription.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmConnexion.resx">
       <DependentUpon>frmConnexion.cs</DependentUpon>
@@ -202,18 +172,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\frmProduit.resx">
       <DependentUpon>frmProduit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Parametre\frmUniteMesure.resx">
-      <DependentUpon>frmUniteMesure.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmStock.resx">
-      <DependentUpon>frmStock.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmCommande.resx">
-      <DependentUpon>frmCommande.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmFacture.resx">
-      <DependentUpon>frmFacture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Parametre\frmLieu.resx">
       <DependentUpon>frmLieu.cs</DependentUpon>

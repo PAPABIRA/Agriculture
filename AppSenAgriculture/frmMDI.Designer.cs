@@ -44,16 +44,6 @@ namespace AppSenAgriculture
             this.btnNavProduits = new System.Windows.Forms.Button();
             this.panelSidebarHeader = new System.Windows.Forms.Panel();
             this.lblSidebarTitle = new System.Windows.Forms.Label();
-            this.btnNavUnites = new System.Windows.Forms.Button();
-            this.btnNavStock = new System.Windows.Forms.Button();
-            this.lblCommerce = new System.Windows.Forms.Label();
-            this.btnNavCommande = new System.Windows.Forms.Button();
-            this.btnNavFacture = new System.Windows.Forms.Button();
-            this.btnNavClients = new System.Windows.Forms.Button();
-            this.btnNavClients = new System.Windows.Forms.Button();
-            this.btnNavFournisseurs = new System.Windows.Forms.Button();
-            this.btnNavAdmins = new System.Windows.Forms.Button();
-            this.lblSecurite = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panelSidebar.SuspendLayout();
             this.panelSidebarHeader.SuspendLayout();
@@ -127,16 +117,9 @@ namespace AppSenAgriculture
             // 
             // panelSidebar
             // 
-            this.panelSidebar.Controls.Add(this.btnNavAdmins);
-            this.panelSidebar.Controls.Add(this.btnNavFournisseurs);
-            this.panelSidebar.Controls.Add(this.btnNavClients);
-            this.panelSidebar.Controls.Add(this.lblSecurite);
-            this.panelSidebar.Controls.Add(this.btnNavFacture);
-            this.panelSidebar.Controls.Add(this.btnNavCommande);
-            this.panelSidebar.Controls.Add(this.lblCommerce);
-            this.panelSidebar.Controls.Add(this.btnNavStock);
+            this.panelSidebar.Controls.Add(this.btnActionQuitter);
+            this.panelSidebar.Controls.Add(this.btnActionDeconnexion);
             this.panelSidebar.Controls.Add(this.btnNavLieux);
-            this.panelSidebar.Controls.Add(this.btnNavUnites);
             this.panelSidebar.Controls.Add(this.btnNavCategories);
             this.panelSidebar.Controls.Add(this.btnNavProduits);
             this.panelSidebar.Controls.Add(this.panelSidebarHeader);
@@ -170,64 +153,14 @@ namespace AppSenAgriculture
             // 
             // btnNavLieux
             // 
+            this.btnNavLieux.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNavLieux.Location = new System.Drawing.Point(0, 152);
+            this.btnNavLieux.Name = "btnNavLieux";
+            this.btnNavLieux.Size = new System.Drawing.Size(220, 44);
+            this.btnNavLieux.TabIndex = 3;
+            this.btnNavLieux.Text = "Lieux";
             this.btnNavLieux.UseVisualStyleBackColor = true;
             this.btnNavLieux.Click += new System.EventHandler(this.btnNavLieux_Click);
-            // 
-            // btnNavUnites
-            // 
-            this.btnNavUnites.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNavUnites.Location = new System.Drawing.Point(0, 196);
-            this.btnNavUnites.Name = "btnNavUnites";
-            this.btnNavUnites.Size = new System.Drawing.Size(220, 44);
-            this.btnNavUnites.TabIndex = 9;
-            this.btnNavUnites.Text = "Unités";
-            this.btnNavUnites.UseVisualStyleBackColor = true;
-            this.btnNavUnites.Click += new System.EventHandler(this.btnNavUnites_Click);
-            // 
-            // btnNavStock
-            // 
-            this.btnNavStock.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNavStock.Location = new System.Drawing.Point(0, 240);
-            this.btnNavStock.Name = "btnNavStock";
-            this.btnNavStock.Size = new System.Drawing.Size(220, 44);
-            this.btnNavStock.TabIndex = 10;
-            this.btnNavStock.Text = "Stocks";
-            this.btnNavStock.UseVisualStyleBackColor = true;
-            this.btnNavStock.Click += new System.EventHandler(this.btnNavStock_Click);
-            // 
-            // lblCommerce
-            // 
-            this.lblCommerce.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblCommerce.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblCommerce.ForeColor = System.Drawing.Color.Gray;
-            this.lblCommerce.Location = new System.Drawing.Point(0, 284);
-            this.lblCommerce.Name = "lblCommerce";
-            this.lblCommerce.Padding = new System.Windows.Forms.Padding(10, 20, 0, 5);
-            this.lblCommerce.Size = new System.Drawing.Size(220, 45);
-            this.lblCommerce.TabIndex = 11;
-            this.lblCommerce.Text = "COMMERCE";
-            // 
-            // btnNavCommande
-            // 
-            this.btnNavCommande.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNavCommande.Location = new System.Drawing.Point(0, 329);
-            this.btnNavCommande.Name = "btnNavCommande";
-            this.btnNavCommande.Size = new System.Drawing.Size(220, 44);
-            this.btnNavCommande.TabIndex = 12;
-            this.btnNavCommande.Text = "Commandes";
-            this.btnNavCommande.UseVisualStyleBackColor = true;
-            this.btnNavCommande.Click += new System.EventHandler(this.btnNavCommande_Click);
-            // 
-            // btnNavFacture
-            // 
-            this.btnNavFacture.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNavFacture.Location = new System.Drawing.Point(0, 373);
-            this.btnNavFacture.Name = "btnNavFacture";
-            this.btnNavFacture.Size = new System.Drawing.Size(220, 44);
-            this.btnNavFacture.TabIndex = 13;
-            this.btnNavFacture.Text = "Factures";
-            this.btnNavFacture.UseVisualStyleBackColor = true;
-            this.btnNavFacture.Click += new System.EventHandler(this.btnNavFacture_Click);
             // 
             // btnNavCategories
             // 
@@ -250,50 +183,6 @@ namespace AppSenAgriculture
             this.btnNavProduits.Text = "Produits";
             this.btnNavProduits.UseVisualStyleBackColor = true;
             this.btnNavProduits.Click += new System.EventHandler(this.btnNavProduits_Click);
-            // 
-            // lblSecurite
-            // 
-            this.lblSecurite.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblSecurite.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.lblSecurite.ForeColor = System.Drawing.Color.Gray;
-            this.lblSecurite.Location = new System.Drawing.Point(0, 196);
-            this.lblSecurite.Name = "lblSecurite";
-            this.lblSecurite.Padding = new System.Windows.Forms.Padding(10, 20, 0, 5);
-            this.lblSecurite.Size = new System.Drawing.Size(220, 45);
-            this.lblSecurite.Text = "SÉCURITÉ";
-            // 
-            // btnNavClients
-            // 
-            this.btnNavClients.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNavClients.Location = new System.Drawing.Point(0, 241);
-            this.btnNavClients.Name = "btnNavClients";
-            this.btnNavClients.Size = new System.Drawing.Size(220, 44);
-            this.btnNavClients.TabIndex = 6;
-            this.btnNavClients.Text = "Clients";
-            this.btnNavClients.UseVisualStyleBackColor = true;
-            this.btnNavClients.Click += new System.EventHandler(this.btnNavClients_Click);
-            // 
-            // btnNavFournisseurs
-            // 
-            this.btnNavFournisseurs.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNavFournisseurs.Location = new System.Drawing.Point(0, 285);
-            this.btnNavFournisseurs.Name = "btnNavFournisseurs";
-            this.btnNavFournisseurs.Size = new System.Drawing.Size(220, 44);
-            this.btnNavFournisseurs.TabIndex = 7;
-            this.btnNavFournisseurs.Text = "Fournisseurs";
-            this.btnNavFournisseurs.UseVisualStyleBackColor = true;
-            this.btnNavFournisseurs.Click += new System.EventHandler(this.btnNavFournisseurs_Click);
-            // 
-            // btnNavAdmins
-            // 
-            this.btnNavAdmins.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNavAdmins.Location = new System.Drawing.Point(0, 329);
-            this.btnNavAdmins.Name = "btnNavAdmins";
-            this.btnNavAdmins.Size = new System.Drawing.Size(220, 44);
-            this.btnNavAdmins.TabIndex = 8;
-            this.btnNavAdmins.Text = "Utilisateurs";
-            this.btnNavAdmins.UseVisualStyleBackColor = true;
-            this.btnNavAdmins.Click += new System.EventHandler(this.btnNavAdmins_Click);
             // 
             // panelSidebarHeader
             // 
@@ -356,14 +245,5 @@ namespace AppSenAgriculture
         private System.Windows.Forms.Button btnNavLieux;
         private System.Windows.Forms.Button btnActionDeconnexion;
         private System.Windows.Forms.Button btnActionQuitter;
-        private System.Windows.Forms.Button btnNavClients;
-        private System.Windows.Forms.Button btnNavFournisseurs;
-        private System.Windows.Forms.Button btnNavAdmins;
-        private System.Windows.Forms.Label lblSecurite;
-        private System.Windows.Forms.Button btnNavUnites;
-        private System.Windows.Forms.Button btnNavStock;
-        private System.Windows.Forms.Label lblCommerce;
-        private System.Windows.Forms.Button btnNavCommande;
-        private System.Windows.Forms.Button btnNavFacture;
     }
 }
