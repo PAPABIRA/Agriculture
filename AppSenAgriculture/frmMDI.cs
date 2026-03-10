@@ -76,6 +76,13 @@ namespace AppSenAgriculture
             StyleSidebarButton(btnNavProduits);
             StyleSidebarButton(btnNavCategories);
             StyleSidebarButton(btnNavLieux);
+            StyleSidebarButton(btnNavUnites);
+            StyleSidebarButton(btnNavStock);
+            StyleSidebarButton(btnNavCommande);
+            StyleSidebarButton(btnNavFacture);
+            StyleSidebarButton(btnNavClients);
+            StyleSidebarButton(btnNavFournisseurs);
+            StyleSidebarButton(btnNavAdmins);
             StyleSidebarButton(btnActionDeconnexion, isDanger: false);
             StyleSidebarButton(btnActionQuitter, isDanger: true);
         }
@@ -218,6 +225,20 @@ namespace AppSenAgriculture
         private void btnNavCategories_Click(object sender, EventArgs e) => cToolStripMenuItem_Click(sender, e);
 
         private void btnNavLieux_Click(object sender, EventArgs e) => lieuToolStripMenuItem_Click(sender, e);
+        
+        private void btnNavUnites_Click(object sender, EventArgs e) => OpenChild(new AppSenAgriculture.Views.Parametre.frmUniteMesure());
+
+        private void btnNavStock_Click(object sender, EventArgs e) => OpenChild(new AppSenAgriculture.Views.frmStock());
+
+        private void btnNavCommande_Click(object sender, EventArgs e) => OpenChild(new AppSenAgriculture.Views.frmCommande());
+
+        private void btnNavFacture_Click(object sender, EventArgs e) => OpenChild(new AppSenAgriculture.Views.frmFacture());
+
+        private void btnNavClients_Click(object sender, EventArgs e) => OpenChild(new AppSenAgriculture.Views.Securite.frmClient());
+
+        private void btnNavFournisseurs_Click(object sender, EventArgs e) => OpenChild(new AppSenAgriculture.Views.Securite.frmFacilitateur());
+
+        private void btnNavAdmins_Click(object sender, EventArgs e) => OpenChild(new AppSenAgriculture.Views.Securite.frmAdmin());
 
         private void btnActionDeconnexion_Click(object sender, EventArgs e) => seDeToolStripMenuItem_Click(sender, e);
 

@@ -30,5 +30,7 @@ namespace AppSenAgriculture.Models
         public DbSet<Facture> Factures { get; set; }
 
         public DbSet<Lieu> Lieux { get; set; }
+
+        public DbSet<Admin> Admins { get; set; }
     }
 }
