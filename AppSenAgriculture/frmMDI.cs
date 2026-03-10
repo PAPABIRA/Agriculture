@@ -76,6 +76,9 @@ namespace AppSenAgriculture
             StyleSidebarButton(btnNavProduits);
             StyleSidebarButton(btnNavCategories);
             StyleSidebarButton(btnNavLieux);
+            StyleSidebarButton(btnNavClients);
+            StyleSidebarButton(btnNavFournisseurs);
+            StyleSidebarButton(btnNavAdmins);
             StyleSidebarButton(btnActionDeconnexion, isDanger: false);
             StyleSidebarButton(btnActionQuitter, isDanger: true);
         }
@@ -218,6 +221,12 @@ namespace AppSenAgriculture
         private void btnNavCategories_Click(object sender, EventArgs e) => cToolStripMenuItem_Click(sender, e);
 
         private void btnNavLieux_Click(object sender, EventArgs e) => lieuToolStripMenuItem_Click(sender, e);
+        
+        private void btnNavClients_Click(object sender, EventArgs e) => OpenChild(new AppSenAgriculture.Views.Securite.frmClient());
+
+        private void btnNavFournisseurs_Click(object sender, EventArgs e) => OpenChild(new AppSenAgriculture.Views.Securite.frmFacilitateur());
+
+        private void btnNavAdmins_Click(object sender, EventArgs e) => OpenChild(new AppSenAgriculture.Views.Securite.frmAdmin());
 
         private void btnActionDeconnexion_Click(object sender, EventArgs e) => seDeToolStripMenuItem_Click(sender, e);
 
