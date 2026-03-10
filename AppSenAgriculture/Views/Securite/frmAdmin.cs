@@ -59,3 +59,5 @@ namespace AppSenAgriculture.Views.Securite
         protected override void OnFormClosing(FormClosingEventArgs e) { _ctx?.Dispose(); base.OnFormClosing(e); }
     }
 }
+
+
