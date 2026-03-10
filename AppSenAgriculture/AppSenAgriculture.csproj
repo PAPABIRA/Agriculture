@@ -152,6 +152,12 @@
     <Compile Include="Views\Parametre\frmLieu.Designer.cs">
       <DependentUpon>frmLieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Securite\frmInscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Securite\frmInscription.Designer.cs">
+      <DependentUpon>frmInscription.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmConnexion.resx">
       <DependentUpon>frmConnexion.cs</DependentUpon>
     </EmbeddedResource>
