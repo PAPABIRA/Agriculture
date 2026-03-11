@@ -12,6 +12,10 @@ using System.Data.Entity;
 
 namespace AppSenAgriculture.Views.Parametre
 {
+    /// <summary>
+    /// Formulaire de gestion des catégories de produits.
+    /// Permet de regrouper les produits par famille (ex: Céréales, Engrais).
+    /// </summary>
     public partial class frmCategorie : Form
     {
         private int? _selectedIdCategorie = null;
@@ -41,6 +45,10 @@ namespace AppSenAgriculture.Views.Parametre
             }
         }
 
+        /// <summary>
+        /// Rafraîchit la grille des catégories en interrogeant la base de données.
+        /// Utilise une projection (Select) pour ne récupérer que les champs nécessaires.
+        /// </summary>
         private void RefreshGrid()
         {
             try

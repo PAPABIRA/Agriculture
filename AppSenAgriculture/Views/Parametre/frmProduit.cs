@@ -13,6 +13,10 @@ using System.Globalization;
 
 namespace AppSenAgriculture.Views.Parametre
 {
+    /// <summary>
+    /// Formulaire de gestion du catalogue produit.
+    /// Gère les relations entre produits et catégories.
+    /// </summary>
     public partial class frmProduit : Form
     {
         private int? _selectedIdProduit = null;
@@ -29,6 +33,9 @@ namespace AppSenAgriculture.Views.Parametre
             RefreshGrid();
         }
 
+        /// <summary>
+        /// Remplit la liste déroulante des catégories pour l'association produit-catégorie.
+        /// </summary>
         private void LoadCategories()
         {
             try
@@ -52,6 +59,9 @@ namespace AppSenAgriculture.Views.Parametre
             }
         }
 
+        /// <summary>
+        /// Charge la liste des produits avec leurs catégories associées (via .Include).
+        /// </summary>
         private void RefreshGrid()
         {
             try

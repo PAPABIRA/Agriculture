@@ -7,6 +7,10 @@ using AppSenAgriculture.UI;
 
 namespace AppSenAgriculture.Views.Securite
 {
+    /// <summary>
+    /// Formulaire de gestion des comptes administrateurs.
+    /// Permet de gérer les accès au système (Login, Rôle, etc.).
+    /// </summary>
     public partial class frmAdmin : Form
     {
         private BdSenAgricultureContext _ctx = new BdSenAgricultureContext();

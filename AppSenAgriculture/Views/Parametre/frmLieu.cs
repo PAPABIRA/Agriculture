@@ -12,6 +12,9 @@ using System.Data.Entity;
 
 namespace AppSenAgriculture.Views.Parametre
 {
+    /// <summary>
+    /// Formulaire de gestion des lieux (entrepôts, points de vente, zones de culture).
+    /// </summary>
     public partial class frmLieu : Form
     {
         private int? _selectedIdLieu = null;
@@ -41,6 +44,10 @@ namespace AppSenAgriculture.Views.Parametre
             }
         }
 
+        /// <summary>
+        /// Charge la liste des lieux depuis MySQL et configure l'affichage de la grille.
+        /// Inclut une vérification robuste de l'existence de la table 'LieuxApp'.
+        /// </summary>
         private void RefreshGrid()
         {
             try
