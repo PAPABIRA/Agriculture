@@ -7,6 +7,9 @@ using AppSenAgriculture.UI;
 
 namespace AppSenAgriculture.Views.Securite
 {
+    /// <summary>
+    /// Formulaire de gestion des facilitateurs (fournisseurs ou intermédiaires).
+    /// </summary>
     public partial class frmFacilitateur : Form
     {
         private BdSenAgricultureContext _ctx = new BdSenAgricultureContext();

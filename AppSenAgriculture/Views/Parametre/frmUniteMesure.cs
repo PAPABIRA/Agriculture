@@ -5,6 +5,9 @@ using AppSenAgriculture.Models;
 
 namespace AppSenAgriculture.Views.Parametre
 {
+    /// <summary>
+    /// Formulaire de gestion des unités de mesure (Kg, Sac, Litre, etc.).
+    /// </summary>
     public partial class frmUniteMesure : Form
     {
         private BdSenAgricultureContext _ctx = new BdSenAgricultureContext();
@@ -16,6 +19,9 @@ namespace AppSenAgriculture.Views.Parametre
             ChargerDonnees();
         }
 
+        /// <summary>
+        /// Charge la liste des unités de mesure depuis la base de données.
+        /// </summary>
         private void ChargerDonnees()
         {
             try
@@ -24,6 +30,7 @@ namespace AppSenAgriculture.Views.Parametre
                 dgv.DataSource = list;
                 lblTotal.Text = $"Total : {list.Count} unité(s)";
                 
+                // Personnalisation des entêtes de colonnes
                 if (dgv.Columns["IdUniteMesure"] != null)
                     dgv.Columns["IdUniteMesure"].HeaderText = "ID";
             }
@@ -33,6 +40,9 @@ namespace AppSenAgriculture.Views.Parametre
             }
         }
 
+        /// <summary>
+        /// Remplit le formulaire lorsqu'une unité est sélectionnée dans la grille.
+        /// </summary>
         private void dgv_SelectionChanged(object sender, EventArgs e)
         {
             if (dgv.CurrentRow?.DataBoundItem is UniteMesure u)
@@ -44,6 +54,9 @@ namespace AppSenAgriculture.Views.Parametre
             }
         }
 
+        /// <summary>
+        /// Ajoute une nouvelle unité de mesure après validation.
+        /// </summary>
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtLibelle.Text))
@@ -67,6 +80,9 @@ namespace AppSenAgriculture.Views.Parametre
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+        /// <summary>
+        /// Modifie l'unité de mesure sélectionnée.
+        /// </summary>
         private void btnModifier_Click(object sender, EventArgs e)
         {
             if (_selected == null) return;
@@ -82,10 +98,13 @@ namespace AppSenAgriculture.Views.Parametre
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+        /// <summary>
+        /// Supprime l'unité de mesure sélectionnée.
+        /// </summary>
         private void btnSupprimer_Click(object sender, EventArgs e)
         {
             if (_selected == null) return;
-            if (MessageBox.Show("Supprimer cette unité ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Supprimer cette unité ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
                 {
@@ -101,6 +120,9 @@ namespace AppSenAgriculture.Views.Parametre
 
         private void btnReset_Click(object sender, EventArgs e) => Vider();
 
+        /// <summary>
+        /// Réinitialise les champs de saisie.
+        /// </summary>
         private void Vider()
         {
             txtLibelle.Clear();

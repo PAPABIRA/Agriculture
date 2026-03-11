@@ -5,6 +5,10 @@ using AppSenAgriculture.Models;
 
 namespace AppSenAgriculture.Views
 {
+    /// <summary>
+    /// Formulaire de gestion des commandes.
+    /// Permet de créer et de suivre les commandes (Statut, Date).
+    /// </summary>
     public partial class frmCommande : Form
     {
         private BdSenAgricultureContext _ctx = new BdSenAgricultureContext();
@@ -16,6 +20,9 @@ namespace AppSenAgriculture.Views
             ChargerDonnees();
         }
 
+        /// <summary>
+        /// Charge l'historique des commandes depuis MySQL.
+        /// </summary>
         private void ChargerDonnees()
         {
             try

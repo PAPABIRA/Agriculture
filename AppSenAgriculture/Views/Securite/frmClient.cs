@@ -9,6 +9,10 @@ using AppSenAgriculture.UI;
 
 namespace AppSenAgriculture.Views.Securite
 {
+    /// <summary>
+    /// Formulaire de gestion des comptes clients.
+    /// Permet le suivi des informations personnelles et du statut de blocage.
+    /// </summary>
     public partial class frmClient : Form
     {
         private BdSenAgricultureContext _ctx = new BdSenAgricultureContext();
@@ -21,6 +25,9 @@ namespace AppSenAgriculture.Views.Securite
         }
 
         // ── Chargement ────────────────────────────────────────
+        /// <summary>
+        /// Charge la liste des clients et configure les colonnes de la grille.
+        /// </summary>
         private void ChargerClients()
         {
             try

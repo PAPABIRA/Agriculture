@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace AppSenAgriculture
 {
+    /// <summary>
+    /// Formulaire de connexion à l'application.
+    /// Gère l'authentification des administrateurs via la base de données MySQL.
+    /// </summary>
     public partial class frmConnexion : Form
     {
         public frmConnexion()
@@ -24,11 +28,15 @@ namespace AppSenAgriculture
             }
         }
 
+        /// <summary>
+        /// Gère le clic sur le bouton de connexion.
+        /// Vérifie les identifiants en base de données avant d'ouvrir l'espace MDI.
+        /// </summary>
         private void bnSeConnecter_Click(object sender, EventArgs e)
         {
             try
             {
-                // Vérification des identifiants
+                // 1. Validation de surface : vérifie que les champs ne sont pas vides
                 if (string.IsNullOrWhiteSpace(txtIdentifiant.Text))
                 {
                     MessageBox.Show("Veuillez entrer un identifiant", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -43,7 +51,7 @@ namespace AppSenAgriculture
                     return;
                 }
 
-                // Vérification des identifiants via la base de données
+                // 2. Interrogation de la base de données via Entity Framework
                 try
                 {
                     using (var db = new Models.BdSenAgricultureContext())
@@ -51,9 +59,10 @@ namespace AppSenAgriculture
                         string login = txtIdentifiant.Text.Trim();
                         string password = txtMotDePasse.Text.Trim();
 
-                        // Recherche de l'administrateur
+                        // Recherche d'un administrateur correspondant au login et qui est actif
                         var admin = db.Admins.FirstOrDefault(a => a.Login == login && a.EstActif);
 
+                        // Si l'admin n'existe pas ou si le mot de passe est incorrect
                         if (admin == null || admin.MotDePasse != password)
                         {
                             MessageBox.Show("Identifiant ou mot de passe incorrect !", 
@@ -62,23 +71,24 @@ namespace AppSenAgriculture
                             return;
                         }
 
-                        // Connexion réussie
+                        // Connexion réussie : On affiche un message de bienvenue
                         MessageBox.Show($"Bienvenue, {admin.NomPrenom} !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception dbEx)
                 {
+                    // En cas d'erreur de connexion à MySQL
                     MessageBox.Show($"ERREUR DE CONNEXION À LA BASE DE DONNÉES:\n\n{dbEx.Message}\n\nVérifiez que MySQL est démarré et que la base 'bdsenagriculture' est configurée.", 
                         "Erreur Base de Données", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Ouverture du formulaire principal
+                // 3. Passage au formulaire parent MDI
                 frmMDI f = new frmMDI();
                 f.Show();
                 
-                // Fermeture du formulaire de connexion
-                this.Hide(); // Utiliser Hide au lieu de Close pour éviter les problèmes
+                // On cache ce formulaire car il ne doit pas être fermé pour garder l'application active si c'est le formulaire principal
+                this.Hide(); 
             }
             catch (Exception ex)
             {
@@ -87,6 +97,9 @@ namespace AppSenAgriculture
             }
         }
 
+        /// <summary>
+        /// Ferme proprement l'application.
+        /// </summary>
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             try
@@ -103,12 +116,15 @@ namespace AppSenAgriculture
             }
         }
 
+        /// <summary>
+        /// Ouvre le formulaire d'inscription pour créer un nouvel administrateur.
+        /// </summary>
         private void lnkInscription_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             try
             {
                 Views.Securite.frmInscription f = new Views.Securite.frmInscription();
-                f.ShowDialog();
+                f.ShowDialog(); // ShowDialog rend le formulaire modal (bloque le parent tant qu'il n'est pas fermé)
             }
             catch (Exception ex)
             {

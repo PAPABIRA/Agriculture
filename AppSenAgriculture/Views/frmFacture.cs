@@ -5,6 +5,10 @@ using AppSenAgriculture.Models;
 
 namespace AppSenAgriculture.Views
 {
+    /// <summary>
+    /// Formulaire de gestion des factures.
+    /// Gère l'émission et l'archivage des factures.
+    /// </summary>
     public partial class frmFacture : Form
     {
         private BdSenAgricultureContext _ctx = new BdSenAgricultureContext();
@@ -16,6 +20,9 @@ namespace AppSenAgriculture.Views
             ChargerDonnees();
         }
 
+        /// <summary>
+        /// Récupère la liste des factures enregistrées.
+        /// </summary>
         private void ChargerDonnees()
         {
             try
